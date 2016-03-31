@@ -1,0 +1,15 @@
+Sub Button1_Click()
+
+Dim Msg As Variant
+    Msg = InputBox("MSG", "Input box", "Please insert the number of the SIGNAL", 800, 800)
+    Range("X4").Value = Msg
+    If Range("X4").Value = "1" Then
+    Sheets("CD_Frames").Select
+    Range("E2").Select
+    Selection.Copy
+    Sheets("Search").Select
+    Range("G5").Select
+    ActiveSheet.Paste
+End If
+
+
