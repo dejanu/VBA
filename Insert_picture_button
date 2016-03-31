@@ -1,0 +1,14 @@
+Sub Button2_Click()
+'
+' Button2_Click Macro
+'
+
+'
+    Dim Msg As Variant
+    Msg = InputBox("MSG", "Input box", "Please insert the absolute path of the picture", 800, 800)
+Range("K4").Value = Msg
+    ActiveSheet.Pictures.Insert( _
+        Msg). _
+        Select
+    Selection.ShapeRange.IncrementTop -99.6
+End Sub
