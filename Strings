@@ -1,0 +1,44 @@
+using System.IO;
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string input = Console.ReadLine();// read string from stdin
+        int length = input.Length;
+        Console.WriteLine("Your word is {0} and it has {1} letters \n", input,length);
+        //sorting in a alphabetical order
+        string inputjoin=string.Join<char>(",",input);//append a comma to each char m,o,n,d,a,y
+        Console.WriteLine(inputjoin);
+        string[] letters =inputjoin.Split(',');//array to store the chars
+        Console.WriteLine("Select a letter to display: \n");
+        int let_no=Console.Read();
+        if (let_no > length)
+            { Console.WriteLine("Your word has only {0} letters",length);}
+        else{
+        switch (let_no){
+            case 1:
+                Console.WriteLine(letters[0]);
+            break;
+            case 2:
+                Console.WriteLine(letters[1]);
+            break;
+            case 3:
+                Console.WriteLine(letters[2]);
+            break;
+            default:
+                Console.WriteLine("........");
+            break;
+        }
+        }
+        Array.Sort<string>(letters);//Sort method to the array, convert the char to type string
+        string concat = ""; //emplty string
+        foreach(string c in letters)
+        {
+            concat +=c;
+        }
+        Console.WriteLine("String in alphabetical order is: {0}", concat);//Display the string in alphabetical order
+        
+    }
+    }
