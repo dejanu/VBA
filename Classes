@@ -1,0 +1,47 @@
+using System.IO;
+using System;
+
+
+public class Cont {
+    public enum tip {economy, salary, deposit};
+    
+    protected int code ;
+    protected string name ;
+    
+//constructor  
+public void BasePrint (int c , string n){
+            int code = c;
+            string name =n;
+            
+            Console.WriteLine("Your accound has pin and name: "+code+name);
+}
+
+    
+}
+
+//clasa derivata
+class Account : Cont {
+    public int years;
+    public tip type;
+    public void Print() {
+         Console.WriteLine("code is: "+code);
+         Console.WriteLine("name is: " +name);
+         Console.WriteLine("Accountytpe is:" + type);
+    
+    }
+    
+}
+
+class Program
+{
+    static void Main()
+    {
+        Cont c1 = new Cont();
+        Cont c2 = new Cont();
+        Account c3 = new Account();
+        
+        c3.BasePrint(100,"RAF");
+        c1.BasePrint(10,"ING");
+        c2.BasePrint(200,"BRD");
+    }
+}
